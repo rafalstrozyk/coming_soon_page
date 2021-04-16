@@ -1,0 +1,240 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  display: block;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 300;
+  font-size: 1.6rem;
+  background-image: radial-gradient(
+    circle,
+    rgba(73, 121, 51, 0.8),
+    rgba(118, 144, 66, 0.7),
+    rgba(164, 167, 85, 0.7),
+    rgba(209, 189, 108, 0.7),
+    rgba(255, 212, 137, 0.7)
+  );
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  color: white;
+}
+
+h1 {
+  font-size: 6.5rem;
+  word-spacing: 5px;
+  font-weight: 700;
+  letter-spacing: 2rem;
+}
+
+p {
+  font-size: 1.9rem;
+  word-spacing: 2px;
+  letter-spacing: 0.2rem;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.grid-container {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: auto 35% auto 45%;
+  grid-template-rows: 20% auto 20%;
+  grid-template-areas:
+    '. . . foto'
+    '. content . foto '
+    '. . . foto ';
+}
+
+#bg-1 {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(73, 121, 51, 0.8),
+    rgba(118, 144, 66, 0.7),
+    rgba(164, 167, 85, 0.7),
+    rgba(209, 189, 108, 0.7),
+    rgba(255, 212, 137, 0.7)
+  );
+  -webkit-clip-path: polygon(0 26%, 94% 0, 13% 46%, 0 93%, 28% 52%, 100% 20%);
+  clip-path: polygon(0 26%, 94% 0, 13% 46%, 0 93%, 28% 52%, 100% 20%);
+}
+
+#bg-2 {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -2;
+  background-image: linear-gradient(
+    to left,
+    rgba(73, 121, 51, 0.8),
+    rgba(118, 144, 66, 0.7),
+    rgba(164, 167, 85, 0.7),
+    rgba(209, 189, 108, 0.7),
+    rgba(255, 212, 137, 0.7)
+  );
+  -webkit-clip-path: polygon(0 0, 24% 12%, 57% 89%, 0 35%, 52% 100%, 59% 66%);
+  clip-path: polygon(0 0, 24% 12%, 57% 89%, 0 35%, 52% 100%, 59% 66%);
+}
+
+#right {
+  height: 100vh;
+  width: 100%;
+  background-image: url('img2.jpg');
+  background-position: center;
+  background-size: cover;
+  grid-area: foto;
+}
+
+#left {
+  grid-area: content;
+}
+
+#left > *:not(:first-child) {
+  margin-top: 4rem;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+}
+
+.title span {
+  color: #497933;
+}
+
+form {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type='email'] {
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: transparent;
+  border: 2px solid rgba(73, 121, 51, 0.8);
+  border-right: transparent !important;
+  color: white;
+  font-weight: 300;
+  font-size: 2rem;
+  height: 100%;
+  width: 98%;
+  padding: 1rem;
+  border-radius: 30px;
+  outline: none;
+  z-index: 1;
+  transition: all 0.3s;
+}
+
+input[type='email']::placeholder {
+  color: rgba(79, 119, 80, 0.7);
+}
+
+input[type='email']:hover {
+  box-shadow: 5px 3px 25px rgba(255, 212, 137, 0.7);
+}
+input[type='email']:focus {
+  border: 2px solid rgba(255, 212, 137, 0.8);
+  box-shadow: 5px 3px 25px rgba(255, 255, 255, 0.3);
+}
+
+input[type='email']:focus + button {
+  border: 2px solid rgba(255, 212, 137, 0.8);
+  color: #497933;
+}
+button {
+  font-family: 'Roboto Condensed', sans-serif;
+  background-image: linear-gradient(
+    to left bottom,
+    rgba(73, 121, 51, 0.7),
+    rgba(118, 144, 66, 0.7),
+    rgba(164, 167, 85, 0.7),
+    rgba(209, 189, 108, 0.7),
+    rgba(255, 212, 137, 0.7)
+  );
+  border: 2px solid rgba(73, 121, 51, 0.8);
+
+  color: white;
+  font-weight: 300;
+  font-size: 3.7rem;
+
+  width: 8rem;
+  border-radius: 30px;
+  outline: none;
+  position: absolute;
+  right: -2%;
+  top: 0%;
+  bottom: 0%;
+  z-index: 5;
+  transition: all 0.3s;
+}
+
+button:hover {
+  transform: scale(1.02) translateX(5px);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:focus {
+  background-image: linear-gradient(
+    to left bottom,
+    rgba(73, 121, 51, 0.9),
+    rgba(118, 144, 66, 0.9),
+    rgba(164, 167, 85, 0.9),
+    rgba(209, 189, 108, 0.9),
+    rgba(255, 212, 137, 0.9)
+  );
+  color: #497933;
+}
+
+@media screen and (max-width: 1200px) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 50%;
+  }
+
+  h1 {
+    font-size: 5rem;
+  }
+
+  .grid-container {
+    grid-template-columns: auto 45% auto 45%;
+  }
+}
+@media screen and (max-width: 450px) {
+  html {
+    font-size: 43.75;
+  }
+
+  .grid-container {
+    grid-template-columns: auto 80% auto;
+    grid-template-rows: 10% auto 10%;
+    grid-template-areas:
+      '. . . '
+      '. content  . '
+      '. . .  ';
+  }
+
+  #right {
+    display: none;
+  }
+}
