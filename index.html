@@ -23,10 +23,11 @@
           labore error dignissimos id, quis nisi dolor aspernatur tenetur
           corrupti ipsa aut nemo.
         </p>
-        <form action="">
-          <input placeholder="Email Adress" type="email" />
-          <button>&#62;</button>
+        <form name="mailForm" onsubmit="event.preventDefault(); validateForm()">
+          <input id="email" placeholder="Email Adress" type="text" />
+          <button type="submit" value="Submit">&#62;</button>
         </form>
+        <div id="message"></div>
       </div>
       <div id="right"></div>
     </div>
